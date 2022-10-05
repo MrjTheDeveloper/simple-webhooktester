@@ -7,5 +7,5 @@ Go to https://webhooktester.netlify.app/
 Or download this html and try it on your Desktop.
 
 
-## Tested Webhook urls
+## Tested Webhook-Urls
 - Discord
