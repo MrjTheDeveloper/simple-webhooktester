@@ -1,4 +1,4 @@
-# simple-webhooktester
+# Simple-WebhookTester
 This is a Simple Webhooktester written in JS
 
 ## How to
