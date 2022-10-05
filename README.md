@@ -5,3 +5,7 @@ Written in JS, Simple WebhookTester is a tool that you can use to check if your 
 
 Go to https://webhooktester.netlify.app/
 Or download this html and try it on your Desktop.
+
+
+## Tested Webhook urls
+- Discord
