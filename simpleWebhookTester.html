@@ -1,0 +1,41 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+		document.title = "Simple WebhookTester";
+var webhookTester = document.createElement('div');
+webhookTester.innerHTML = '<input type="text" id="webhookurl" placeholder="Webhook URL" value="" /><input type="text" id="webhookmessage" placeholder="Add a Text" value="Hello World" /><button id="webhooksend">Send</button>';
+document.body.appendChild(webhookTester);
+
+document.getElementById("webhooksend").addEventListener("click", function(){
+  var webhookurl = document.getElementById("webhookurl").value;
+  var webhookmessage = document.getElementById("webhookmessage").value;
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", webhookurl, true);
+  xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+  xhr.onload = function () {
+    var users = JSON.parse(xhr.responseText);
+    if (xhr.readyState == 4 && xhr.status == "200") {
+      console.table(users);
+    } else {
+      console.error(users);
+    }
+  }
+  xhr.send(JSON.stringify({content: webhookmessage}));
+});
+
+document.getElementById("webhooksend").addEventListener("click", function(){
+  document.getElementById("webhooksend").innerHTML = "Sent";
+  document.getElementById("webhooksend").style.color = "green";
+  setTimeout(function(){
+  document.getElementById("webhooksend").innerHTML = "Send";
+  document.getElementById("webhooksend").style.color = "black";
+  }, 5000);
+});
+});
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
